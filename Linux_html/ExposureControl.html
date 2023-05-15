@@ -1,0 +1,659 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>ExposureControl.py &#8212; BFModule 0.1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ExposureControl';</script>
+    <link rel="icon" href="_static/python-logo-only.png"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ReadImages.py" href="ReadImages.html" />
+    <link rel="prev" title="CLSerialCom.py" href="CLSerialCom.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/Logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/Logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="modules.html">
+                        Modules
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="Examples.html">
+                        Examples
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="modules.html">
+                        Modules
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="Examples.html">
+                        Examples
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="BFGTL.html">BFGTL.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CircularAcquisition.html">CircularAcquisition.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CircAqNumpyArray.html">CircAqNumpyArray.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CLSerialCom.html">CLSerialCom.py</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">ExposureControl.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ReadImages.html">ReadImages.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SeqAcquisition.html">SeqAcquisition.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SimpleCircNumpyArr.html">SimpleCircNumpyArr.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SimpleCirc.html">SimpleCirc.py</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="Examples.html" class="nav-link"><strong>Examples</strong></a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">ExposureControl.py</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="exposurecontrol-py">
+<h1>ExposureControl.py<a class="headerlink" href="#exposurecontrol-py" title="Permalink to this heading">#</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">platform</span>
+
+<span class="k">if</span><span class="p">(</span><span class="n">platform</span><span class="o">.</span><span class="n">system</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;Windows&#39;</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">sys</span>
+    <span class="kn">import</span> <span class="nn">msvcrt</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="o">.</span><span class="n">major</span> <span class="o">&gt;=</span> <span class="mi">3</span> <span class="ow">and</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="o">.</span><span class="n">minor</span> <span class="o">&gt;=</span> <span class="mi">8</span><span class="p">):</span>
+        <span class="kn">import</span> <span class="nn">os</span>
+        <span class="c1">#Following lines specifying, the location of DLLs, are required for Python Versions 3.8 and greater</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">add_dll_directory</span><span class="p">(</span><span class="s2">&quot;C:\BitFlow SDK 6.5\Bin64&quot;</span><span class="p">)</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">add_dll_directory</span><span class="p">(</span><span class="s2">&quot;C:\Program Files\CameraLink\Serial&quot;</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">BFModule.BufferAcquisition</span> <span class="k">as</span> <span class="nn">Buf</span>
+<span class="kn">import</span> <span class="nn">BFModule.Display</span> <span class="k">as</span> <span class="nn">Disp</span>
+
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">threading</span>
+
+
+<span class="k">def</span> <span class="nf">AcqThread</span><span class="p">(</span><span class="n">ThreadName</span><span class="p">,</span> <span class="n">CircAq</span><span class="p">,</span> <span class="n">BufArray</span><span class="p">,</span> <span class="n">disp</span><span class="p">):</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">CircAq</span><span class="o">.</span><span class="n">GetAcqStatus</span><span class="p">()</span><span class="o">.</span><span class="n">Start</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">CurBuf</span> <span class="o">=</span> <span class="n">CircAq</span><span class="o">.</span><span class="n">WaitForFrame</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">disp</span><span class="o">.</span><span class="n">isOpen</span><span class="p">):</span>
+                <span class="n">disp</span><span class="o">.</span><span class="n">Update</span><span class="p">(</span><span class="n">BufArray</span><span class="p">[</span><span class="n">CurBuf</span><span class="o">.</span><span class="n">BufferNumber</span><span class="p">])</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+            <span class="k">pass</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Exposure Control Example&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;---------------------------------&#39;</span><span class="p">)</span>
+
+    <span class="n">numBuffers</span> <span class="o">=</span> <span class="mi">100</span>
+
+    <span class="n">CirAq</span> <span class="o">=</span> <span class="n">Buf</span><span class="o">.</span><span class="n">clsCircularAcquisition</span><span class="p">()</span>
+
+    <span class="c1">#Call Open board function by showing the Board select dialog</span>
+    <span class="n">CirAq</span><span class="o">.</span><span class="n">Open</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Board has been opened</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="c1">#Allocate the requested number of buffers</span>
+    <span class="n">BufArray</span> <span class="o">=</span> <span class="n">CirAq</span><span class="o">.</span><span class="n">BufferSetup</span><span class="p">(</span><span class="n">numBuffers</span><span class="p">)</span>
+
+    <span class="c1">#Setup acquisition using the default options</span>
+    <span class="n">CirAq</span><span class="o">.</span><span class="n">AqSetup</span><span class="p">(</span><span class="n">Buf</span><span class="o">.</span><span class="n">SetupOptions</span><span class="o">.</span><span class="n">setupDefault</span><span class="p">)</span>
+
+    <span class="n">disp</span> <span class="o">=</span> <span class="n">Disp</span><span class="o">.</span><span class="n">clsDisp</span><span class="p">(</span><span class="n">CirAq</span><span class="p">)</span>
+
+    <span class="c1">#Open the display surface</span>
+    <span class="n">disp</span><span class="o">.</span><span class="n">Open</span><span class="p">()</span>
+
+    <span class="n">t1</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">AcqThread</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;AcqThread&#39;</span><span class="p">,</span> <span class="n">CirAq</span><span class="p">,</span> <span class="n">BufArray</span><span class="p">,</span> <span class="n">disp</span><span class="p">))</span>
+    
+    <span class="n">CirAq</span><span class="o">.</span><span class="n">AqControl</span><span class="p">(</span><span class="n">Buf</span><span class="o">.</span><span class="n">AcqCommands</span><span class="o">.</span><span class="n">Start</span><span class="p">,</span> <span class="n">Buf</span><span class="o">.</span><span class="n">AcqControlOptions</span><span class="o">.</span><span class="n">Wait</span><span class="p">)</span>
+    <span class="n">t1</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Enter </span><span class="se">\&#39;</span><span class="s1">x</span><span class="se">\&#39;</span><span class="s1"> to Exit&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Enter </span><span class="se">\&#39;</span><span class="s1">m</span><span class="se">\&#39;</span><span class="s1"> to modify line/frame rate and exposure&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Enter </span><span class="se">\&#39;</span><span class="s1">r</span><span class="se">\&#39;</span><span class="s1"> to read the exposure control parameters&#39;</span><span class="p">)</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="n">ch</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Enter command: &#39;</span><span class="p">)</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">ch</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="o">==</span><span class="s1">&#39;X&#39;</span><span class="p">):</span>
+                <span class="n">CirAq</span><span class="o">.</span><span class="n">AqControl</span><span class="p">(</span><span class="n">Buf</span><span class="o">.</span><span class="n">AcqCommands</span><span class="o">.</span><span class="n">Stop</span><span class="p">,</span> <span class="n">Buf</span><span class="o">.</span><span class="n">AcqControlOptions</span><span class="o">.</span><span class="n">Wait</span><span class="p">)</span>
+                <span class="k">break</span>
+
+            <span class="k">elif</span><span class="p">(</span><span class="n">ch</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;M&#39;</span><span class="p">):</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Please enter line/frame rate and exposure time parameters:&quot;</span><span class="p">)</span>
+                <span class="n">expTime</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter exposure time in milliseconds: &quot;</span><span class="p">))</span>
+                <span class="n">period</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter line/frame period in milliseconds: &quot;</span><span class="p">))</span>
+
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Trigger Options:&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;0 - Free run mode&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1 - One-shot from trigger&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2 - One-shot from encoder&quot;</span><span class="p">)</span>
+                <span class="n">trigMode</span> <span class="o">=</span> <span class="n">Buf</span><span class="o">.</span><span class="n">NTGTrigModes</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter trigger mode: &quot;</span><span class="p">)))</span>
+
+                <span class="nb">print</span><span class="p">(</span><span class="n">trigMode</span><span class="p">)</span>
+
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Exposure signal mode options:&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;0 - Asserted low&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1 - Asserted high&quot;</span><span class="p">)</span>
+                <span class="n">selection</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter exposure signal mode: &quot;</span><span class="p">))</span>
+
+                <span class="k">if</span><span class="p">(</span><span class="n">selection</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+                    <span class="n">trigPolarity</span> <span class="o">=</span> <span class="kc">False</span> <span class="c1">#Buf.TriggerPolarity.AssertedLow</span>
+                <span class="k">elif</span><span class="p">(</span><span class="n">selection</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span>
+                    <span class="n">trigPolarity</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1">#Buf.TriggerPolarity.AssertedHigh</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid selection&quot;</span><span class="p">)</span>
+
+                <span class="nb">print</span><span class="p">(</span><span class="n">trigPolarity</span><span class="p">)</span>
+
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Output signal options:&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1 - CC1&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2 - CC2&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;3 - CC3&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;4 - CC4&quot;</span><span class="p">)</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">CirAq</span><span class="o">.</span><span class="n">isGn2</span><span class="p">):</span>
+                    <span class="c1">#if (True):</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;5 - TRIGGER&quot;</span><span class="p">)</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;6 - ENCODER A&quot;</span><span class="p">)</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;7 - ENCODER B&quot;</span><span class="p">)</span>
+                    <span class="n">userInput</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Enter output signal: &quot;</span><span class="p">))</span>
+
+                    <span class="k">if</span><span class="p">(</span><span class="n">userInput</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">):</span>
+                        <span class="n">outputSignal</span> <span class="o">=</span> <span class="n">Buf</span><span class="o">.</span><span class="n">NTGOutputSignal</span><span class="p">(</span><span class="n">userInput</span><span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="k">if</span><span class="p">(</span><span class="n">userInput</span> <span class="o">==</span> <span class="mi">5</span><span class="p">):</span>
+                            <span class="n">outputSignal</span> <span class="o">=</span> <span class="n">Buf</span><span class="o">.</span><span class="n">NTGOutputSignal</span><span class="o">.</span><span class="n">InputTrig</span>
+                        <span class="k">elif</span><span class="p">(</span><span class="n">userInput</span> <span class="o">==</span> <span class="mi">6</span><span class="p">):</span>
+                            <span class="n">outputSignal</span> <span class="o">=</span> <span class="n">Buf</span><span class="o">.</span><span class="n">NTGOutputSignal</span><span class="o">.</span><span class="n">InputEncA</span>
+                        <span class="k">elif</span><span class="p">(</span><span class="n">userInput</span> <span class="o">==</span> <span class="mi">7</span><span class="p">):</span>
+                            <span class="n">outputSignal</span> <span class="o">=</span> <span class="n">Buf</span><span class="o">.</span><span class="n">NTGOutputSignal</span><span class="o">.</span><span class="n">InputEncB</span>
+
+                    <span class="nb">print</span><span class="p">(</span><span class="n">outputSignal</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;5 - GPOUT0&quot;</span><span class="p">)</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;6 - GPOUT1&quot;</span><span class="p">)</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;7 - GPOUT2&quot;</span><span class="p">)</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;8 - GPOUT3&quot;</span><span class="p">)</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;9 - TRIGGER&quot;</span><span class="p">)</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;10 - ENCODER&quot;</span><span class="p">)</span>
+
+                    <span class="n">userInput</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Enter output signal: &quot;</span><span class="p">))</span>
+
+                    <span class="k">if</span><span class="p">(</span><span class="n">userInput</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">):</span>
+                        <span class="n">outputSignal</span> <span class="o">=</span> <span class="n">Buf</span><span class="o">.</span><span class="n">NTGOutputSignal</span><span class="p">(</span><span class="n">userInput</span><span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="k">if</span><span class="p">(</span><span class="n">userInput</span> <span class="o">==</span> <span class="mi">5</span><span class="p">):</span>
+                            <span class="n">outputSignal</span> <span class="o">=</span> <span class="n">Buf</span><span class="o">.</span><span class="n">NTGOutputSignal</span><span class="o">.</span><span class="n">OutputGP0</span>
+                        <span class="k">elif</span><span class="p">(</span><span class="n">userInput</span> <span class="o">==</span> <span class="mi">6</span><span class="p">):</span>
+                            <span class="n">outputSignal</span> <span class="o">=</span> <span class="n">Buf</span><span class="o">.</span><span class="n">NTGOutputSignal</span><span class="o">.</span><span class="n">OutputGP1</span>
+                        <span class="k">elif</span><span class="p">(</span><span class="n">userInput</span> <span class="o">==</span> <span class="mi">7</span><span class="p">):</span>
+                            <span class="n">outputSignal</span> <span class="o">=</span> <span class="n">Buf</span><span class="o">.</span><span class="n">NTGOutputSignal</span><span class="o">.</span><span class="n">OutputGP2</span>
+                        <span class="k">elif</span><span class="p">(</span><span class="n">userInput</span> <span class="o">==</span> <span class="mi">8</span><span class="p">):</span>
+                            <span class="n">outputSignal</span> <span class="o">=</span> <span class="n">Buf</span><span class="o">.</span><span class="n">NTGOutputSignal</span><span class="o">.</span><span class="n">OutputGP3</span>
+                        <span class="k">elif</span><span class="p">(</span><span class="n">userInput</span> <span class="o">==</span> <span class="mi">9</span><span class="p">):</span>
+                            <span class="n">outputSignal</span> <span class="o">=</span> <span class="n">Buf</span><span class="o">.</span><span class="n">NTGOutputSignal</span><span class="o">.</span><span class="n">InputTrig</span>
+                        <span class="k">elif</span><span class="p">(</span><span class="n">userInput</span> <span class="o">==</span> <span class="mi">10</span><span class="p">):</span>
+                            <span class="n">outputSignal</span> <span class="o">=</span> <span class="n">Buf</span><span class="o">.</span><span class="n">NTGOutputSignal</span><span class="o">.</span><span class="n">InputEncA</span>
+
+                    <span class="nb">print</span><span class="p">(</span><span class="n">outputSignal</span><span class="p">)</span>
+
+                <span class="n">exp</span> <span class="o">=</span> <span class="n">Buf</span><span class="o">.</span><span class="n">ExposureControl</span><span class="p">(</span><span class="n">expTime</span><span class="p">,</span> <span class="n">period</span><span class="p">,</span> <span class="n">trigMode</span><span class="p">,</span> <span class="n">trigPolarity</span><span class="p">,</span> <span class="n">outputSignal</span><span class="p">)</span>
+
+                <span class="n">CirAq</span><span class="o">.</span><span class="n">SetExposureControl</span><span class="p">(</span><span class="n">exp</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Programming new exposure parameters&quot;</span><span class="p">)</span>
+                
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">CirAq</span><span class="o">.</span><span class="n">SetExposureControl</span><span class="p">(</span><span class="n">exp</span><span class="p">)</span>
+                <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error programming new exposure. No changes made</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Done.&#39;</span><span class="p">)</span>
+
+            <span class="k">elif</span><span class="p">(</span><span class="n">ch</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;R&#39;</span><span class="p">):</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Reading Exposure control parameters&#39;</span><span class="p">)</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">exp</span> <span class="o">=</span> <span class="n">CirAq</span><span class="o">.</span><span class="n">GetExposureControl</span><span class="p">()</span>
+                <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error reading exposure control parameters.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Exposure time =</span><span class="se">\t\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">exp</span><span class="o">.</span><span class="n">ExposurePeriod</span><span class="p">,</span> <span class="s1">&#39; ms&#39;</span><span class="p">)</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Line Frame Period =</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">exp</span><span class="o">.</span><span class="n">LineFramePeriod</span><span class="p">,</span> <span class="s1">&#39; ms&#39;</span><span class="p">)</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Trigger Mode =</span><span class="se">\t\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">exp</span><span class="o">.</span><span class="n">TriggerMode</span><span class="p">)</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Assert High =</span><span class="se">\t\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">exp</span><span class="o">.</span><span class="n">AssertHigh</span><span class="p">)</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Output Signal =&#39;</span><span class="p">)</span>
+                    <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+                    <span class="k">while</span><span class="p">(</span><span class="n">i</span> <span class="o">&lt;=</span> <span class="mh">0x2000</span><span class="p">):</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">exp</span><span class="o">.</span><span class="n">OutputSignal</span><span class="p">)</span> <span class="o">&amp;</span> <span class="nb">int</span><span class="p">(</span><span class="n">Buf</span><span class="o">.</span><span class="n">NTGOutputSignal</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="o">==</span> <span class="nb">int</span><span class="p">(</span><span class="n">Buf</span><span class="o">.</span><span class="n">NTGOutputSignal</span><span class="p">(</span><span class="n">i</span><span class="p">))):</span>
+                            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t\t\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">Buf</span><span class="o">.</span><span class="n">NTGOutputSignal</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+                        <span class="n">i</span> <span class="o">=</span> <span class="n">i</span><span class="o">*</span><span class="mi">2</span><span class="p">;</span>
+
+    <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+
+    <span class="n">t1</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+
+    <span class="c1">#Close the display surface and free the resources</span>
+    <span class="n">disp</span><span class="o">.</span><span class="n">Close</span><span class="p">()</span>
+
+    <span class="c1">#Deallocate buffers</span>
+    <span class="n">CirAq</span><span class="o">.</span><span class="n">BufferCleanup</span><span class="p">()</span>
+
+    <span class="c1">#Close the board</span>
+    <span class="n">CirAq</span><span class="o">.</span><span class="n">Close</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+
+
+
+
+
+
+
+
+</pre></div>
+</div>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="CLSerialCom.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">CLSerialCom.py</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="ReadImages.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">ReadImages.py</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="_sources/ExposureControl.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2021, Bitflow Inc.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
