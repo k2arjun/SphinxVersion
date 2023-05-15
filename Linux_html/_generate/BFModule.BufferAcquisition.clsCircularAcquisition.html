@@ -1,0 +1,1511 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>BFModule.BufferAcquisition.clsCircularAcquisition &#8212; BFModule 0.1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_generate/BFModule.BufferAcquisition.clsCircularAcquisition';</script>
+    <link rel="icon" href="../_static/python-logo-only.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="BFModule.BufferAcquisition.clsSeqAcquisition" href="BFModule.BufferAcquisition.clsSeqAcquisition.html" />
+    <link rel="prev" title="BFModule.BufferAcquisition.WriteOptions" href="BFModule.BufferAcquisition.WriteOptions.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/Logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/Logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../modules.html">
+                        Modules
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../Examples.html">
+                        Examples
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../modules.html">
+                        Modules
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../Examples.html">
+                        Examples
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="BFModule.BufferAcquisition.html">BFModule.BufferAcquisition</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="BFModule.BufferAcquisition.AcqCommands.html">BFModule.BufferAcquisition.AcqCommands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFModule.BufferAcquisition.AcqControlOptions.html">BFModule.BufferAcquisition.AcqControlOptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFModule.BufferAcquisition.AcqStatus.html">BFModule.BufferAcquisition.AcqStatus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFModule.BufferAcquisition.BoardOpenOptions.html">BFModule.BufferAcquisition.BoardOpenOptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFModule.BufferAcquisition.BoardProperties.html">BFModule.BufferAcquisition.BoardProperties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFModule.BufferAcquisition.BufferInfo.html">BFModule.BufferAcquisition.BufferInfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFModule.BufferAcquisition.BufferedAcquisition.html">BFModule.BufferAcquisition.BufferedAcquisition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFModule.BufferAcquisition.ErrorMode.html">BFModule.BufferAcquisition.ErrorMode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFModule.BufferAcquisition.ExposureControl.html">BFModule.BufferAcquisition.ExposureControl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFModule.BufferAcquisition.InquireParams.html">BFModule.BufferAcquisition.InquireParams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFModule.BufferAcquisition.InterfaceType.html">BFModule.BufferAcquisition.InterfaceType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFModule.BufferAcquisition.NTGOutputSignal.html">BFModule.BufferAcquisition.NTGOutputSignal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFModule.BufferAcquisition.NTGTrigModes.html">BFModule.BufferAcquisition.NTGTrigModes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFModule.BufferAcquisition.SetupOptions.html">BFModule.BufferAcquisition.SetupOptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFModule.BufferAcquisition.TriggerModes.html">BFModule.BufferAcquisition.TriggerModes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFModule.BufferAcquisition.TriggerPolarity.html">BFModule.BufferAcquisition.TriggerPolarity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFModule.BufferAcquisition.WriteOptions.html">BFModule.BufferAcquisition.WriteOptions</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">BFModule.BufferAcquisition.clsCircularAcquisition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFModule.BufferAcquisition.clsSeqAcquisition.html">BFModule.BufferAcquisition.clsSeqAcquisition</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="BFModule.BFGTLUtils.html">BFModule.BFGTLUtils</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="BFModule.BFGTLUtils.BFGTLAccess.html">BFModule.BFGTLUtils.BFGTLAccess</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFModule.BFGTLUtils.BFGTLDevice.html">BFModule.BFGTLUtils.BFGTLDevice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFModule.BFGTLUtils.BFGTLNodeType.html">BFModule.BFGTLUtils.BFGTLNodeType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFModule.BFGTLUtils.BaseNode.html">BFModule.BFGTLUtils.BaseNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFModule.BFGTLUtils.BooleanNode.html">BFModule.BFGTLUtils.BooleanNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFModule.BFGTLUtils.CategoryNode.html">BFModule.BFGTLUtils.CategoryNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFModule.BFGTLUtils.CommandNode.html">BFModule.BFGTLUtils.CommandNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFModule.BFGTLUtils.EnumEntryNode.html">BFModule.BFGTLUtils.EnumEntryNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFModule.BFGTLUtils.EnumerationNode.html">BFModule.BFGTLUtils.EnumerationNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFModule.BFGTLUtils.FloatNode.html">BFModule.BFGTLUtils.FloatNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFModule.BFGTLUtils.IntegerNode.html">BFModule.BFGTLUtils.IntegerNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFModule.BFGTLUtils.Library.html">BFModule.BFGTLUtils.Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFModule.BFGTLUtils.NodeAttributes.html">BFModule.BFGTLUtils.NodeAttributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFModule.BFGTLUtils.StringNode.html">BFModule.BFGTLUtils.StringNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFModule.BFGTLUtils.ValueNode.html">BFModule.BFGTLUtils.ValueNode</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="BFModule.CXPReg.html">BFModule.CXPReg</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="BFModule.CXPReg.clsDevice.html">BFModule.CXPReg.clsDevice</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="BFModule.CLComm.html">BFModule.CLComm</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="BFModule.CLComm.BaudRates.html">BFModule.CLComm.BaudRates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFModule.CLComm.Parity.html">BFModule.CLComm.Parity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFModule.CLComm.StopBits.html">BFModule.CLComm.StopBits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFModule.CLComm.clsCLAllSerial.html">BFModule.CLComm.clsCLAllSerial</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="BFModule.Display.html">BFModule.Display</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="BFModule.Display.clsDisp.html">BFModule.Display.clsDisp</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../modules.html" class="nav-link"><strong>Modules</strong></a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="BFModule.BufferAcquisition.html" class="nav-link">BFModule.BufferAcquisition</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">BFModule.BufferAcquisition.clsCircularAcquisition</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="bfmodule-bufferacquisition-clscircularacquisition">
+<h1>BFModule.BufferAcquisition.clsCircularAcquisition<a class="headerlink" href="#bfmodule-bufferacquisition-clscircularacquisition" title="Permalink to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="BFModule.BufferAcquisition.clsCircularAcquisition">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">BFModule.BufferAcquisition.</span></span><span class="sig-name descname"><span class="pre">clsCircularAcquisition</span></span><a class="headerlink" href="#BFModule.BufferAcquisition.clsCircularAcquisition" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="BFModule.BufferAcquisition.BufferedAcquisition.html#BFModule.BufferAcquisition.BufferedAcquisition" title="BFModule.BufferAcquisition.BufferedAcquisition"><code class="xref py py-class docutils literal notranslate"><span class="pre">BufferedAcquisition</span></code></a></p>
+<p>This class provides the ability to capture images into a circular queue using a BitFlow interface board.</p>
+<p><strong>Inheritance Diagram:</strong></p>
+<div class="graphviz"><object data="../_images/inheritance-d1125853da4cbabe30250429845603fc32aa4de8.svg" type="image/svg+xml" class="inheritance graphviz">
+<p class="warning">Inheritance diagram of BFModule.BufferAcquisition.clsCircularAcquisition</p></object></div>
+<dl class="py method">
+<dt class="sig sig-object py" id="BFModule.BufferAcquisition.clsCircularAcquisition.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BFModule.BufferAcquisition.clsCircularAcquisition.__init__" title="Permalink to this definition">#</a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>__init__(self: BFModule.BufferAcquisition.clsCircularAcquisition) -&gt; None</p></li>
+<li><p>__init__(self: BFModule.BufferAcquisition.clsCircularAcquisition, ErrorMode: BFModule.BufferAcquisition.ErrorMode) -&gt; None</p></li>
+</ol>
+</dd></dl>
+
+<p class="rubric">Methods</p>
+<table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BFModule.BufferAcquisition.clsCircularAcquisition.AqCleanup" title="BFModule.BufferAcquisition.clsCircularAcquisition.AqCleanup"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AqCleanup</span></code></a>(self)</p></td>
+<td><p>Frees all resources used by the acquisition process.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BFModule.BufferAcquisition.clsCircularAcquisition.AqControl" title="BFModule.BufferAcquisition.clsCircularAcquisition.AqControl"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AqControl</span></code></a>(self, cmd, options)</p></td>
+<td><p>Controls the circular acquisition system.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BFModule.BufferAcquisition.clsCircularAcquisition.AqSetup" title="BFModule.BufferAcquisition.clsCircularAcquisition.AqSetup"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AqSetup</span></code></a>(self, arg0)</p></td>
+<td><p>Sets up the board for acquisition into a circular buffer queue.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BFModule.BufferAcquisition.clsCircularAcquisition.BufferCleanup" title="BFModule.BufferAcquisition.clsCircularAcquisition.BufferCleanup"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BufferCleanup</span></code></a>(self)</p></td>
+<td><p>Unmap the allocated frame buffers.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BFModule.BufferAcquisition.clsCircularAcquisition.BufferSetup" title="BFModule.BufferAcquisition.clsCircularAcquisition.BufferSetup"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BufferSetup</span></code></a>(*args, **kwargs)</p></td>
+<td><p>Overloaded function.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BFModule.BufferAcquisition.clsCircularAcquisition.CXPReadData" title="BFModule.BufferAcquisition.clsCircularAcquisition.CXPReadData"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CXPReadData</span></code></a>(*args, **kwargs)</p></td>
+<td><p>Overloaded function.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BFModule.BufferAcquisition.clsCircularAcquisition.CXPReadReg" title="BFModule.BufferAcquisition.clsCircularAcquisition.CXPReadReg"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CXPReadReg</span></code></a>(*args, **kwargs)</p></td>
+<td><p>Overloaded function.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BFModule.BufferAcquisition.clsCircularAcquisition.CXPWriteData" title="BFModule.BufferAcquisition.clsCircularAcquisition.CXPWriteData"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CXPWriteData</span></code></a>(*args, **kwargs)</p></td>
+<td><p>Overloaded function.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BFModule.BufferAcquisition.clsCircularAcquisition.CXPWriteReg" title="BFModule.BufferAcquisition.clsCircularAcquisition.CXPWriteReg"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CXPWriteReg</span></code></a>(*args, **kwargs)</p></td>
+<td><p>Overloaded function.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BFModule.BufferAcquisition.clsCircularAcquisition.Close" title="BFModule.BufferAcquisition.clsCircularAcquisition.Close"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Close</span></code></a>(self)</p></td>
+<td><p>Closes the access to the board and frees all associated resources.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BFModule.BufferAcquisition.clsCircularAcquisition.GetAcqStatus" title="BFModule.BufferAcquisition.clsCircularAcquisition.GetAcqStatus"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GetAcqStatus</span></code></a>(self)</p></td>
+<td><p>Get the values of the Acquisition status flags.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BFModule.BufferAcquisition.clsCircularAcquisition.GetBoardInfo" title="BFModule.BufferAcquisition.clsCircularAcquisition.GetBoardInfo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GetBoardInfo</span></code></a>(self, arg0)</p></td>
+<td><p>Returns information about the board.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BFModule.BufferAcquisition.clsCircularAcquisition.GetBoardNumber" title="BFModule.BufferAcquisition.clsCircularAcquisition.GetBoardNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GetBoardNumber</span></code></a>(self)</p></td>
+<td><p>Returns the board number of the opened board only valid if opened by board number.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BFModule.BufferAcquisition.clsCircularAcquisition.GetCaptureStatus" title="BFModule.BufferAcquisition.clsCircularAcquisition.GetCaptureStatus"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GetCaptureStatus</span></code></a>(self)</p></td>
+<td><p>Outputs the number of frames that have been captured and missed at the moment the function is called.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BFModule.BufferAcquisition.clsCircularAcquisition.GetExposureControl" title="BFModule.BufferAcquisition.clsCircularAcquisition.GetExposureControl"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GetExposureControl</span></code></a>(self)</p></td>
+<td><p>Retrieve the current configuration of the New Timing Generator (NTG) or the Timing Sequencer (TS), which is used to create waveforms to control the line/frame rate and exposure time of cameras.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BFModule.BufferAcquisition.clsCircularAcquisition.GetTriggerMode" title="BFModule.BufferAcquisition.clsCircularAcquisition.GetTriggerMode"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GetTriggerMode</span></code></a>(self)</p></td>
+<td><p>Gets the trigger mode being used by the board.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BFModule.BufferAcquisition.clsCircularAcquisition.GetTriggerPolarity" title="BFModule.BufferAcquisition.clsCircularAcquisition.GetTriggerPolarity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GetTriggerPolarity</span></code></a>(self)</p></td>
+<td><p>Gets the trigger polarity being used by the board.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BFModule.BufferAcquisition.clsCircularAcquisition.Open" title="BFModule.BufferAcquisition.clsCircularAcquisition.Open"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Open</span></code></a>(*args, **kwargs)</p></td>
+<td><p>Overloaded function.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BFModule.BufferAcquisition.clsCircularAcquisition.ReadImageFiles" title="BFModule.BufferAcquisition.clsCircularAcquisition.ReadImageFiles"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ReadImageFiles</span></code></a>(self, fileName[, NumImages])</p></td>
+<td><p>Reads image files from disk into memory, that were saved with the <cite>WriteBuffer</cite> and <cite>WriteBuffers</cite> methods.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BFModule.BufferAcquisition.clsCircularAcquisition.RegFieldWidth" title="BFModule.BufferAcquisition.clsCircularAcquisition.RegFieldWidth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RegFieldWidth</span></code></a>(self, arg0)</p></td>
+<td><p>Get the Field Width, in bytes, of the given register index - Linux only</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BFModule.BufferAcquisition.clsCircularAcquisition.RegId" title="BFModule.BufferAcquisition.clsCircularAcquisition.RegId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RegId</span></code></a>(self, RegName)</p></td>
+<td><p>Return the frame grabber register ID from its name.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BFModule.BufferAcquisition.clsCircularAcquisition.RegName" title="BFModule.BufferAcquisition.clsCircularAcquisition.RegName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RegName</span></code></a>(self, RegId)</p></td>
+<td><p>Return the frame grabber register name from the given register ID.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BFModule.BufferAcquisition.clsCircularAcquisition.RegPeek" title="BFModule.BufferAcquisition.clsCircularAcquisition.RegPeek"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RegPeek</span></code></a>(self, RegId)</p></td>
+<td><p>Peek (read) the value of the frame grabber register with ID RegId .</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BFModule.BufferAcquisition.clsCircularAcquisition.RegPoke" title="BFModule.BufferAcquisition.clsCircularAcquisition.RegPoke"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RegPoke</span></code></a>(self, RegId, Value)</p></td>
+<td><p>Poke (write) Value to the frame grabber register with ID RegId .</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BFModule.BufferAcquisition.clsCircularAcquisition.SWTrigger" title="BFModule.BufferAcquisition.clsCircularAcquisition.SWTrigger"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SWTrigger</span></code></a>(self)</p></td>
+<td><p>Issues a software trigger to the board.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BFModule.BufferAcquisition.clsCircularAcquisition.SetExposureControl" title="BFModule.BufferAcquisition.clsCircularAcquisition.SetExposureControl"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SetExposureControl</span></code></a>(self, arg0)</p></td>
+<td><p>Configure the New Timing Generator (NTG) or the Timing Sequencer (TS), which is used to create waveforms to control the line/frame rate and exposure time of cameras.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BFModule.BufferAcquisition.clsCircularAcquisition.SetTriggerMode" title="BFModule.BufferAcquisition.clsCircularAcquisition.SetTriggerMode"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SetTriggerMode</span></code></a>(self, triggerMode, ...)</p></td>
+<td><p>Sets the trigger mode for the acquisition engine.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BFModule.BufferAcquisition.clsCircularAcquisition.WaitForFrame" title="BFModule.BufferAcquisition.clsCircularAcquisition.WaitForFrame"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WaitForFrame</span></code></a>(self, timeout)</p></td>
+<td><p>Waits until there is a newly filled buffer.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BFModule.BufferAcquisition.clsCircularAcquisition.WriteBuffer" title="BFModule.BufferAcquisition.clsCircularAcquisition.WriteBuffer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WriteBuffer</span></code></a>(self, fileName, bufferNumber[, ...])</p></td>
+<td><p>Writes one buffer to a file on disk in the BMP, TIFF or RAW file format.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BFModule.BufferAcquisition.clsCircularAcquisition.WriteBuffers" title="BFModule.BufferAcquisition.clsCircularAcquisition.WriteBuffers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WriteBuffers</span></code></a>(self, fileName, bufferNumber, ...)</p></td>
+<td><p>Writes multiple buffers to a file on disk in the BMP, TIFF or RAW file format.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BFModule.BufferAcquisition.clsCircularAcquisition.__init__" title="BFModule.BufferAcquisition.clsCircularAcquisition.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(*args, **kwargs)</p></td>
+<td><p>Overloaded function.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BFModule.BufferAcquisition.clsCircularAcquisition.getProperties" title="BFModule.BufferAcquisition.clsCircularAcquisition.getProperties"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getProperties</span></code></a>(self)</p></td>
+<td><p>Returns a <cite>BoardProperties</cite> object which holds information about the opened framegrabber.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BFModule.BufferAcquisition.clsCircularAcquisition.isAqSetup" title="BFModule.BufferAcquisition.clsCircularAcquisition.isAqSetup"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isAqSetup</span></code></a></p></td>
+<td><p>Check if Acquisition is setup.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BFModule.BufferAcquisition.clsCircularAcquisition.isBoardOpen" title="BFModule.BufferAcquisition.clsCircularAcquisition.isBoardOpen"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isBoardOpen</span></code></a></p></td>
+<td><p>Check if the board is open.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#BFModule.BufferAcquisition.clsCircularAcquisition.isBufSetup" title="BFModule.BufferAcquisition.clsCircularAcquisition.isBufSetup"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isBufSetup</span></code></a></p></td>
+<td><p>Check if the buffers are setup.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#BFModule.BufferAcquisition.clsCircularAcquisition.isGn2" title="BFModule.BufferAcquisition.clsCircularAcquisition.isGn2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isGn2</span></code></a></p></td>
+<td><p>Check if the board is a BitFlow Gen 2 board or not.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="BFModule.BufferAcquisition.clsCircularAcquisition.AqCleanup">
+<span class="sig-name descname"><span class="pre">AqCleanup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#BFModule.BufferAcquisition.clsCircularAcquisition" title="BFModule.BufferAcquisition.clsCircularAcquisition"><span class="pre">BFModule.BufferAcquisition.clsCircularAcquisition</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#BFModule.BufferAcquisition.clsCircularAcquisition.AqCleanup" title="Permalink to this definition">#</a></dt>
+<dd><p>Frees all resources used by the acquisition process. Makes sure the board is in a stable
+state.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>void</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#RuntimeError" title="(in Python v3.11)"><strong>RuntimeError</strong></a> – Board not open.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#RuntimeError" title="(in Python v3.11)"><strong>RuntimeError</strong></a> – Buffers not allocated.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#RuntimeError" title="(in Python v3.11)"><strong>RuntimeError</strong></a> – Acquisition has not been setup.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#RuntimeError" title="(in Python v3.11)"><strong>RuntimeError</strong></a> – Error cleaning up acquisition.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BFModule.BufferAcquisition.clsCircularAcquisition.AqControl">
+<span class="sig-name descname"><span class="pre">AqControl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#BFModule.BufferAcquisition.clsCircularAcquisition" title="BFModule.BufferAcquisition.clsCircularAcquisition"><span class="pre">BFModule.BufferAcquisition.clsCircularAcquisition</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmd</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="BFModule.BufferAcquisition.AcqCommands.html#BFModule.BufferAcquisition.AcqCommands" title="BFModule.BufferAcquisition.AcqCommands"><span class="pre">AcqCommands</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="BFModule.BufferAcquisition.AcqControlOptions.html#BFModule.BufferAcquisition.AcqControlOptions" title="BFModule.BufferAcquisition.AcqControlOptions"><span class="pre">AcqControlOptions</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#BFModule.BufferAcquisition.clsCircularAcquisition.AqControl" title="Permalink to this definition">#</a></dt>
+<dd><p>Controls the circular acquisition system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cmd</strong> (<a class="reference internal" href="BFModule.BufferAcquisition.AcqCommands.html#BFModule.BufferAcquisition.AcqCommands" title="BFModule.BufferAcquisition.AcqCommands"><em>AcqCommands</em></a>) – Acquisition command to issue.</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="BFModule.BufferAcquisition.AcqControlOptions.html#BFModule.BufferAcquisition.AcqControlOptions" title="BFModule.BufferAcquisition.AcqControlOptions"><em>AcqControlOptions</em></a>) – Acquisition options.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>void</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#RuntimeError" title="(in Python v3.11)"><strong>RuntimeError</strong></a> – Board not open.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#RuntimeError" title="(in Python v3.11)"><strong>RuntimeError</strong></a> – Buffers not allocated.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#RuntimeError" title="(in Python v3.11)"><strong>RuntimeError</strong></a> – Acquisition has not been setup.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.11)"><strong>ValueError</strong></a> – Unknown command parameter being passed to function.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.11)"><strong>ValueError</strong></a> – Invalid sequence of control commands was used.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#RuntimeError" title="(in Python v3.11)"><strong>RuntimeError</strong></a> – Timed out trying to execute the command.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#RuntimeError" title="(in Python v3.11)"><strong>RuntimeError</strong></a> – Error executing control command.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BFModule.BufferAcquisition.clsCircularAcquisition.AqSetup">
+<span class="sig-name descname"><span class="pre">AqSetup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#BFModule.BufferAcquisition.clsCircularAcquisition" title="BFModule.BufferAcquisition.clsCircularAcquisition"><span class="pre">BFModule.BufferAcquisition.clsCircularAcquisition</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#BFModule.BufferAcquisition.clsCircularAcquisition.AqSetup" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets up the board for acquisition into a circular buffer queue.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>options</strong> (<a class="reference internal" href="BFModule.BufferAcquisition.SetupOptions.html#BFModule.BufferAcquisition.SetupOptions" title="BFModule.BufferAcquisition.SetupOptions"><em>SetupOptions</em></a>) – Acquisition Setup Options. Options may be OR’ed together.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>void</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#RuntimeError" title="(in Python v3.11)"><strong>RuntimeError</strong></a> – Board not open.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#RuntimeError" title="(in Python v3.11)"><strong>RuntimeError</strong></a> – Buffers not allocated.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#RuntimeError" title="(in Python v3.11)"><strong>RuntimeError</strong></a> – Error setting up Acquisition.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BFModule.BufferAcquisition.clsCircularAcquisition.BufferCleanup">
+<span class="sig-name descname"><span class="pre">BufferCleanup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="BFModule.BufferAcquisition.BufferedAcquisition.html#BFModule.BufferAcquisition.BufferedAcquisition" title="BFModule.BufferAcquisition.BufferedAcquisition"><span class="pre">BFModule.BufferAcquisition.BufferedAcquisition</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#BFModule.BufferAcquisition.clsCircularAcquisition.BufferCleanup" title="Permalink to this definition">#</a></dt>
+<dd><p>Unmap the allocated frame buffers.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BFModule.BufferAcquisition.clsCircularAcquisition.BufferSetup">
+<span class="sig-name descname"><span class="pre">BufferSetup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BFModule.BufferAcquisition.clsCircularAcquisition.BufferSetup" title="Permalink to this definition">#</a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic">
+<li><p>BufferSetup(self: BFModule.BufferAcquisition.BufferedAcquisition, numBuffers: int) -&gt; numpy.ndarray[numpy.uint32]</p>
+<blockquote>
+<div><p>Sets up the board for sequence or circular acquisition by allocating buffer memory and setting registers on the board based on the attached camera file at the time Setup is called.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param int numBuffers<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Number of buffers to allocate.</p>
+</dd>
+<dt class="field-even">rtype<span class="colon">:</span></dt>
+<dd class="field-even"><p>numpy.array</p>
+</dd>
+<dt class="field-odd">returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A Numpy array which points to the buffer data.</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><p>BufferSetup(self: BFModule.BufferAcquisition.BufferedAcquisition, bufArray: numpy.ndarray[numpy.uint32], numBuffers: int) -&gt; numpy.ndarray[numpy.uint32]</p>
+<blockquote>
+<div><p>Sets up the board for sequence or circular acquisition with buffer memory allocated by the user. The user passes in a list of byte arrays into the method. Sets registers on the board based on the attached camera file at the time Setup is called.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param numpy bufArray<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Numpy array to acquire the images into.</p>
+</dd>
+<dt class="field-even">param int numBuffers<span class="colon">:</span></dt>
+<dd class="field-even"><p>Number of buffers to allocate.</p>
+</dd>
+<dt class="field-odd">rtype<span class="colon">:</span></dt>
+<dd class="field-odd"><p>void</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BFModule.BufferAcquisition.clsCircularAcquisition.CXPReadData">
+<span class="sig-name descname"><span class="pre">CXPReadData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BFModule.BufferAcquisition.clsCircularAcquisition.CXPReadData" title="Permalink to this definition">#</a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic">
+<li><p>CXPReadData(self: BFModule.BufferAcquisition.BufferedAcquisition, address: int, bytes: int) -&gt; List[int]</p>
+<blockquote>
+<div><p>Read from CXP data space (buffer size should be multiple of 4) on the Master Link.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param int address<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The byte address of the first register to be read.</p>
+</dd>
+<dt class="field-even">param int bytes<span class="colon">:</span></dt>
+<dd class="field-even"><p>The number of bytes to be read from the register space. Must be a multiple of 4.</p>
+</dd>
+<dt class="field-odd">rtype<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+<dt class="field-even">return<span class="colon">:</span></dt>
+<dd class="field-even"><p>value of the specified register.</p>
+</dd>
+<dt class="field-odd">raises ValueError<span class="colon">:</span></dt>
+<dd class="field-odd"><p>if the board is not a CXP device.</p>
+</dd>
+<dt class="field-even">raises RuntimeError<span class="colon">:</span></dt>
+<dd class="field-even"><p>if timed out waiting for acknowledgement.</p>
+</dd>
+<dt class="field-odd">raises RuntimeError<span class="colon">:</span></dt>
+<dd class="field-odd"><p>if error code in acknowledgement from camera.</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><p>CXPReadData(self: BFModule.BufferAcquisition.BufferedAcquisition, link: int, address: int, bytes: int) -&gt; List[int]</p>
+<blockquote>
+<div><p>Read from CXP data space (buffer size should be multiple of 4) on the link specified.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param int link<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The cxp link to read data from.</p>
+</dd>
+<dt class="field-even">param int address<span class="colon">:</span></dt>
+<dd class="field-even"><p>The byte address of the first register to be read.</p>
+</dd>
+<dt class="field-odd">param int bytes<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The number of bytes to be read from the register space. Must be a multiple of 4.</p>
+</dd>
+<dt class="field-even">rtype<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+<dt class="field-odd">return<span class="colon">:</span></dt>
+<dd class="field-odd"><p>value of the specified register.</p>
+</dd>
+<dt class="field-even">raises ValueError<span class="colon">:</span></dt>
+<dd class="field-even"><p>if the board is not a CXP device.</p>
+</dd>
+<dt class="field-odd">raises RuntimeError<span class="colon">:</span></dt>
+<dd class="field-odd"><p>if timed out waiting for acknowledgement.</p>
+</dd>
+<dt class="field-even">raises RuntimeError<span class="colon">:</span></dt>
+<dd class="field-even"><p>if error code in acknowledgement from camera.</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BFModule.BufferAcquisition.clsCircularAcquisition.CXPReadReg">
+<span class="sig-name descname"><span class="pre">CXPReadReg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BFModule.BufferAcquisition.clsCircularAcquisition.CXPReadReg" title="Permalink to this definition">#</a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic">
+<li><p>CXPReadReg(self: BFModule.BufferAcquisition.BufferedAcquisition, address: int) -&gt; int</p>
+<blockquote>
+<div><p>Read the value of a single CoaXPress register on the master link.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param int address<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The byte address of the register to be read.</p>
+</dd>
+<dt class="field-even">rtype<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+<dt class="field-odd">return<span class="colon">:</span></dt>
+<dd class="field-odd"><p>value of the specified register.</p>
+</dd>
+<dt class="field-even">raises ValueError<span class="colon">:</span></dt>
+<dd class="field-even"><p>if the board is not a CXP device.</p>
+</dd>
+<dt class="field-odd">raises RuntimeError<span class="colon">:</span></dt>
+<dd class="field-odd"><p>if timed out waiting for acknowledgement.</p>
+</dd>
+<dt class="field-even">raises RuntimeError<span class="colon">:</span></dt>
+<dd class="field-even"><p>if error code in acknowledgement from camera.</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><p>CXPReadReg(self: BFModule.BufferAcquisition.BufferedAcquisition, link: int, address: int) -&gt; int</p>
+<blockquote>
+<div><p>Read the value of a single CoaXPress register on the link specified.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param int link<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The camera link to read data from.</p>
+</dd>
+<dt class="field-even">param int address<span class="colon">:</span></dt>
+<dd class="field-even"><p>The byte address of the register to be read.</p>
+</dd>
+<dt class="field-odd">rtype<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+<dt class="field-even">return<span class="colon">:</span></dt>
+<dd class="field-even"><p>value of the specified register.</p>
+</dd>
+<dt class="field-odd">raises ValueError<span class="colon">:</span></dt>
+<dd class="field-odd"><p>if the board is not a CXP device.</p>
+</dd>
+<dt class="field-even">raises RuntimeError<span class="colon">:</span></dt>
+<dd class="field-even"><p>if timed out waiting for acknowledgement.</p>
+</dd>
+<dt class="field-odd">raises RuntimeError<span class="colon">:</span></dt>
+<dd class="field-odd"><p>if error code in acknowledgement from camera.</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BFModule.BufferAcquisition.clsCircularAcquisition.CXPWriteData">
+<span class="sig-name descname"><span class="pre">CXPWriteData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BFModule.BufferAcquisition.clsCircularAcquisition.CXPWriteData" title="Permalink to this definition">#</a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic">
+<li><p>CXPWriteData(self: BFModule.BufferAcquisition.BufferedAcquisition, address: int, data: List[int]) -&gt; None</p>
+<blockquote>
+<div><p>Write to CXP data space on the master link.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param int address<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The byte address of the first register to write to.</p>
+</dd>
+<dt class="field-even">param list data<span class="colon">:</span></dt>
+<dd class="field-even"><p>The values to write. Size of the list must be in multiples of 4.</p>
+</dd>
+<dt class="field-odd">rtype<span class="colon">:</span></dt>
+<dd class="field-odd"><p>void</p>
+</dd>
+<dt class="field-even">raises ValueError<span class="colon">:</span></dt>
+<dd class="field-even"><p>if the board is not a CXP device.</p>
+</dd>
+<dt class="field-odd">raises RuntimeError<span class="colon">:</span></dt>
+<dd class="field-odd"><p>if timed out waiting for acknowledgement.</p>
+</dd>
+<dt class="field-even">raises RuntimeError<span class="colon">:</span></dt>
+<dd class="field-even"><p>if error code in acknowledgement from camera.</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><p>CXPWriteData(self: BFModule.BufferAcquisition.BufferedAcquisition, link: int, address: int, data: List[int]) -&gt; None</p>
+<blockquote>
+<div><p>Write to CXP data space on the link specified.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param int address<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The byte address of the first register to write to.</p>
+</dd>
+<dt class="field-even">param int link<span class="colon">:</span></dt>
+<dd class="field-even"><p>The camera link to write data to.</p>
+</dd>
+<dt class="field-odd">param list data<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The values to write. Size of the list must be in multiples of 4.</p>
+</dd>
+<dt class="field-even">rtype<span class="colon">:</span></dt>
+<dd class="field-even"><p>void</p>
+</dd>
+<dt class="field-odd">raises ValueError<span class="colon">:</span></dt>
+<dd class="field-odd"><p>if the board is not a CXP device.</p>
+</dd>
+<dt class="field-even">raises RuntimeError<span class="colon">:</span></dt>
+<dd class="field-even"><p>if timed out waiting for acknowledgement.</p>
+</dd>
+<dt class="field-odd">raises RuntimeError<span class="colon">:</span></dt>
+<dd class="field-odd"><p>if error code in acknowledgement from camera.</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BFModule.BufferAcquisition.clsCircularAcquisition.CXPWriteReg">
+<span class="sig-name descname"><span class="pre">CXPWriteReg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BFModule.BufferAcquisition.clsCircularAcquisition.CXPWriteReg" title="Permalink to this definition">#</a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic">
+<li><p>CXPWriteReg(self: BFModule.BufferAcquisition.BufferedAcquisition, address: int, value: int) -&gt; None</p>
+<blockquote>
+<div><p>Write the value of a single CoaXPress register on the Master link.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param int address<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The byte address of the register to write to.</p>
+</dd>
+<dt class="field-even">param int value<span class="colon">:</span></dt>
+<dd class="field-even"><p>The value to write to the specified register.</p>
+</dd>
+<dt class="field-odd">rtype<span class="colon">:</span></dt>
+<dd class="field-odd"><p>void</p>
+</dd>
+<dt class="field-even">raises ValueError<span class="colon">:</span></dt>
+<dd class="field-even"><p>if the board is not a CXP device.</p>
+</dd>
+<dt class="field-odd">raises RuntimeError<span class="colon">:</span></dt>
+<dd class="field-odd"><p>if timed out waiting for acknowledgement.</p>
+</dd>
+<dt class="field-even">raises RuntimeError<span class="colon">:</span></dt>
+<dd class="field-even"><p>if error code in acknowledgement from camera.</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><p>CXPWriteReg(self: BFModule.BufferAcquisition.BufferedAcquisition, link: int, address: int, value: int) -&gt; None</p>
+<blockquote>
+<div><p>Write the value of a single CoaXPress register on the link specified.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param int address<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The byte address of the register to write to.</p>
+</dd>
+<dt class="field-even">param int link<span class="colon">:</span></dt>
+<dd class="field-even"><p>The cxp link to write data to.</p>
+</dd>
+<dt class="field-odd">param int value<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The value to write to the specified register.</p>
+</dd>
+<dt class="field-even">rtype<span class="colon">:</span></dt>
+<dd class="field-even"><p>void</p>
+</dd>
+<dt class="field-odd">raises ValueError<span class="colon">:</span></dt>
+<dd class="field-odd"><p>if the board is not a CXP device.</p>
+</dd>
+<dt class="field-even">raises RuntimeError<span class="colon">:</span></dt>
+<dd class="field-even"><p>if timed out waiting for acknowledgement.</p>
+</dd>
+<dt class="field-odd">raises RuntimeError<span class="colon">:</span></dt>
+<dd class="field-odd"><p>if error code in acknowledgement from camera.</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BFModule.BufferAcquisition.clsCircularAcquisition.Close">
+<span class="sig-name descname"><span class="pre">Close</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="BFModule.BufferAcquisition.BufferedAcquisition.html#BFModule.BufferAcquisition.BufferedAcquisition" title="BFModule.BufferAcquisition.BufferedAcquisition"><span class="pre">BFModule.BufferAcquisition.BufferedAcquisition</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#BFModule.BufferAcquisition.clsCircularAcquisition.Close" title="Permalink to this definition">#</a></dt>
+<dd><p>Closes the access to the board and frees all associated resources.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BFModule.BufferAcquisition.clsCircularAcquisition.GetAcqStatus">
+<span class="sig-name descname"><span class="pre">GetAcqStatus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="BFModule.BufferAcquisition.BufferedAcquisition.html#BFModule.BufferAcquisition.BufferedAcquisition" title="BFModule.BufferAcquisition.BufferedAcquisition"><span class="pre">BFModule.BufferAcquisition.BufferedAcquisition</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="BFModule.BufferAcquisition.AcqStatus.html#BFModule.BufferAcquisition.AcqStatus" title="BFModule.BufferAcquisition.AcqStatus"><span class="pre">BFModule.BufferAcquisition.AcqStatus</span></a></span></span><a class="headerlink" href="#BFModule.BufferAcquisition.clsCircularAcquisition.GetAcqStatus" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the values of the Acquisition status flags.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="BFModule.BufferAcquisition.AcqStatus.html#BFModule.BufferAcquisition.AcqStatus" title="BFModule.BufferAcquisition.AcqStatus"><code class="xref py py-class docutils literal notranslate"><span class="pre">AcqStatus</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BFModule.BufferAcquisition.clsCircularAcquisition.GetBoardInfo">
+<span class="sig-name descname"><span class="pre">GetBoardInfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="BFModule.BufferAcquisition.BufferedAcquisition.html#BFModule.BufferAcquisition.BufferedAcquisition" title="BFModule.BufferAcquisition.BufferedAcquisition"><span class="pre">BFModule.BufferAcquisition.BufferedAcquisition</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">enumInquireParams</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a></span></span><a class="headerlink" href="#BFModule.BufferAcquisition.clsCircularAcquisition.GetBoardInfo" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns information about the board.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>brdInqVariable</strong> (<a class="reference internal" href="BFModule.BufferAcquisition.InquireParams.html#BFModule.BufferAcquisition.InquireParams" title="BFModule.BufferAcquisition.InquireParams"><em>InquireParams</em></a>) – The parameter to find the value of.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)">int</a></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Value for the inquired parameter.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BFModule.BufferAcquisition.clsCircularAcquisition.GetBoardNumber">
+<span class="sig-name descname"><span class="pre">GetBoardNumber</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="BFModule.BufferAcquisition.BufferedAcquisition.html#BFModule.BufferAcquisition.BufferedAcquisition" title="BFModule.BufferAcquisition.BufferedAcquisition"><span class="pre">BFModule.BufferAcquisition.BufferedAcquisition</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a></span></span><a class="headerlink" href="#BFModule.BufferAcquisition.clsCircularAcquisition.GetBoardNumber" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns the board number of the opened board only valid if opened by board number.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)">int</a></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Board number</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BFModule.BufferAcquisition.clsCircularAcquisition.GetCaptureStatus">
+<span class="sig-name descname"><span class="pre">GetCaptureStatus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="BFModule.BufferAcquisition.BufferedAcquisition.html#BFModule.BufferAcquisition.BufferedAcquisition" title="BFModule.BufferAcquisition.BufferedAcquisition"><span class="pre">BFModule.BufferAcquisition.BufferedAcquisition</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#BFModule.BufferAcquisition.clsCircularAcquisition.GetCaptureStatus" title="Permalink to this definition">#</a></dt>
+<dd><p>Outputs the number of frames that have been captured and missed at the moment the function is called.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)">list</a></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>a list of 2 elements containing the number of Captured frames at index 0, and the number of missed frames at index 1.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BFModule.BufferAcquisition.clsCircularAcquisition.GetExposureControl">
+<span class="sig-name descname"><span class="pre">GetExposureControl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="BFModule.BufferAcquisition.BufferedAcquisition.html#BFModule.BufferAcquisition.BufferedAcquisition" title="BFModule.BufferAcquisition.BufferedAcquisition"><span class="pre">BFModule.BufferAcquisition.BufferedAcquisition</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="BFModule.BufferAcquisition.ExposureControl.html#BFModule.BufferAcquisition.ExposureControl" title="BFModule.BufferAcquisition.ExposureControl"><span class="pre">ExposureControl</span></a></span></span><a class="headerlink" href="#BFModule.BufferAcquisition.clsCircularAcquisition.GetExposureControl" title="Permalink to this definition">#</a></dt>
+<dd><p>Retrieve the current configuration of the New Timing Generator (NTG) or the Timing Sequencer (TS), which is used to create waveforms to control the line/frame rate and exposure time of cameras.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="BFModule.BufferAcquisition.ExposureControl.html#BFModule.BufferAcquisition.ExposureControl" title="BFModule.BufferAcquisition.ExposureControl"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExposureControl</span></code></a></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The current NTG or TS configuration.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BFModule.BufferAcquisition.clsCircularAcquisition.GetTriggerMode">
+<span class="sig-name descname"><span class="pre">GetTriggerMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="BFModule.BufferAcquisition.BufferedAcquisition.html#BFModule.BufferAcquisition.BufferedAcquisition" title="BFModule.BufferAcquisition.BufferedAcquisition"><span class="pre">BFModule.BufferAcquisition.BufferedAcquisition</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="BFModule.BufferAcquisition.TriggerModes.html#BFModule.BufferAcquisition.TriggerModes" title="BFModule.BufferAcquisition.TriggerModes"><span class="pre">TriggerModes</span></a></span></span><a class="headerlink" href="#BFModule.BufferAcquisition.clsCircularAcquisition.GetTriggerMode" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets the trigger mode being used by the board.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="BFModule.BufferAcquisition.TriggerModes.html#BFModule.BufferAcquisition.TriggerModes" title="BFModule.BufferAcquisition.TriggerModes"><code class="xref py py-class docutils literal notranslate"><span class="pre">TriggerModes</span></code></a></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The trigger mode being used by the board.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BFModule.BufferAcquisition.clsCircularAcquisition.GetTriggerPolarity">
+<span class="sig-name descname"><span class="pre">GetTriggerPolarity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="BFModule.BufferAcquisition.BufferedAcquisition.html#BFModule.BufferAcquisition.BufferedAcquisition" title="BFModule.BufferAcquisition.BufferedAcquisition"><span class="pre">BFModule.BufferAcquisition.BufferedAcquisition</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="BFModule.BufferAcquisition.TriggerPolarity.html#BFModule.BufferAcquisition.TriggerPolarity" title="BFModule.BufferAcquisition.TriggerPolarity"><span class="pre">TriggerPolarity</span></a></span></span><a class="headerlink" href="#BFModule.BufferAcquisition.clsCircularAcquisition.GetTriggerPolarity" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets the trigger polarity being used by the board.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>TriggerPolarity - The trigger polarity being used by the board.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BFModule.BufferAcquisition.clsCircularAcquisition.Open">
+<span class="sig-name descname"><span class="pre">Open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BFModule.BufferAcquisition.clsCircularAcquisition.Open" title="Permalink to this definition">#</a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic">
+<li><p>Open(self: BFModule.BufferAcquisition.BufferedAcquisition, CLonly: bool = False) -&gt; None</p>
+<blockquote>
+<div><p>Display the available boards and open the selected board for access</p>
+<dl class="field-list simple">
+<dt class="field-odd">param bool CLonly<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Only display available CameraLink boards. (Optional)</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><p>Open(self: BFModule.BufferAcquisition.BufferedAcquisition, sNdx: int) -&gt; None</p>
+<blockquote>
+<div><p>Open the board referenced by the given board number, with Write access.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param int sNdx<span class="colon">:</span></dt>
+<dd class="field-odd"><p>/dev/video&lt;Ndx&gt; access.</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><p>Open(self: BFModule.BufferAcquisition.BufferedAcquisition, sNdx: int, camFileName: str) -&gt; None</p>
+<blockquote>
+<div><p>Open the board referenced by the given board number, with Write access and load the given camera file.
+The environment variable BITFLOW_INSTALL_DIRS must be set if path does not contain a ‘/’. If path contains a ‘/’ then the fileName is relative to the current directory. If path begins with ‘/’ then it is absolute.</p>
+<p>If the path contains a ‘/’ then the file name is case sensitive.
+:param int sNdx: /dev/video&lt;Ndx&gt; access.
+:param str camFileName: [path][mode&#64;]fileName</p>
+</div></blockquote>
+</li>
+<li><p>Open(self: BFModule.BufferAcquisition.BufferedAcquisition, sNdx: int, modeFlags: BFModule.BufferAcquisition.BoardOpenOptions) -&gt; None</p>
+<blockquote>
+<div><p>Opens a board for access with the given Options.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param int sNdx<span class="colon">:</span></dt>
+<dd class="field-odd"><p>/dev/video&lt;Ndx&gt; access.</p>
+</dd>
+<dt class="field-even">param BoardOpenOptions modeFlags<span class="colon">:</span></dt>
+<dd class="field-even"><p>access mode flags.</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><p>Open(self: BFModule.BufferAcquisition.BufferedAcquisition, sNdx: int, modeFlags: BFModule.BufferAcquisition.BoardOpenOptions, camFileName: str) -&gt; None</p>
+<blockquote>
+<div><p>Opens a board for access with the given Options, and load the given camera file.
+The environment variable BITFLOW_INSTALL_DIRS must be set if path does not contain a ‘/’. If path contains a ‘/’ then the fileName is relative to the current directory. If path begins with ‘/’ then it is absolute.</p>
+<p>If the path contains a ‘/’ then the file name is case sensitive.
+:param int sNdx: /dev/video&lt;Ndx&gt; access.
+:param BoardOpenOptions modeFlags: access mode flags.
+:param str camFileName: [path][mode&#64;]fileName</p>
+</div></blockquote>
+</li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BFModule.BufferAcquisition.clsCircularAcquisition.ReadImageFiles">
+<span class="sig-name descname"><span class="pre">ReadImageFiles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="BFModule.BufferAcquisition.BufferedAcquisition.html#BFModule.BufferAcquisition.BufferedAcquisition" title="BFModule.BufferAcquisition.BufferedAcquisition"><span class="pre">BFModule.BufferAcquisition.BufferedAcquisition</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">fileName</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">NumImages</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#BFModule.BufferAcquisition.clsCircularAcquisition.ReadImageFiles" title="Permalink to this definition">#</a></dt>
+<dd><p>Reads image files from disk into memory, that were saved with the <cite>WriteBuffer</cite> and <cite>WriteBuffers</cite> methods.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fileName</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – The first file to be read into memory. The file name should include the path and file
+extension. Only .tif files supported. If reading multiple files, all files should be in the same directory, and should be named sequentially.</p></li>
+<li><p><strong>NumImages</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – The number of images to be read.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>void.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#RuntimeError" title="(in Python v3.11)"><strong>RuntimeError</strong></a> – Board not open.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#RuntimeError" title="(in Python v3.11)"><strong>RuntimeError</strong></a> – Buffers not allocated.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.11)"><strong>ValueError</strong></a> – Number of images greater than the number of buffers allocated.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.11)"><strong>ValueError</strong></a> – Unsupported Image file extension. Currently supported formats: TIFF.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#RuntimeError" title="(in Python v3.11)"><strong>RuntimeError</strong></a> – Unable to open TIFF file.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#RuntimeError" title="(in Python v3.11)"><strong>RuntimeError</strong></a> – Image file dimensions don’t match the Buffer dimensions.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#RuntimeError" title="(in Python v3.11)"><strong>RuntimeError</strong></a> – Unable to open TIFF file.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BFModule.BufferAcquisition.clsCircularAcquisition.RegFieldWidth">
+<span class="sig-name descname"><span class="pre">RegFieldWidth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="BFModule.BufferAcquisition.BufferedAcquisition.html#BFModule.BufferAcquisition.BufferedAcquisition" title="BFModule.BufferAcquisition.BufferedAcquisition"><span class="pre">BFModule.BufferAcquisition.BufferedAcquisition</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a></span></span><a class="headerlink" href="#BFModule.BufferAcquisition.clsCircularAcquisition.RegFieldWidth" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the Field Width, in bytes, of the given register index - Linux only</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>RegId</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – The ID of the frame grabber register whose field width is to be returned.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>int - Field width in bytes of the register corresponding to the register ID. -1 if invalid register index.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BFModule.BufferAcquisition.clsCircularAcquisition.RegId">
+<span class="sig-name descname"><span class="pre">RegId</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="BFModule.BufferAcquisition.BufferedAcquisition.html#BFModule.BufferAcquisition.BufferedAcquisition" title="BFModule.BufferAcquisition.BufferedAcquisition"><span class="pre">BFModule.BufferAcquisition.BufferedAcquisition</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">RegName</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a></span></span><a class="headerlink" href="#BFModule.BufferAcquisition.clsCircularAcquisition.RegId" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the frame grabber register ID from its name.</p>
+<p>The ID is used in conjunction with the BFRegPeek and BFRegPoke methods. The ID of any given register
+may change betwee releases, but the RegName will always remain the same. The ID returned by this function
+can be converted back into the register name, RegName using the BFRegName function.</p>
+<p>The ID value will be static for any given release of the BitFlow SDK, but may change with even a minor release.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>RegName</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – The name of the desired frame grabber register. This value is case sensitive.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>int - The ID of the named register, RegName.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BFModule.BufferAcquisition.clsCircularAcquisition.RegName">
+<span class="sig-name descname"><span class="pre">RegName</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="BFModule.BufferAcquisition.BufferedAcquisition.html#BFModule.BufferAcquisition.BufferedAcquisition" title="BFModule.BufferAcquisition.BufferedAcquisition"><span class="pre">BFModule.BufferAcquisition.BufferedAcquisition</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">RegId</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#BFModule.BufferAcquisition.clsCircularAcquisition.RegName" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the frame grabber register name from the given register ID.</p>
+<p>This function iteratively retrieves the string name of every frame grabber register available on the currently open board.
+The name and ID pairing used by this function is the same used by BFRegId, and valid values of RegId may be used with BFRegPeek
+and BFRegPoke functions, as well. The ID value will be static for any given release of the BitFlow SDK, but may change with even        a minor release.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>RegId</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – The ID of the frame grabber register whose name is to be returned.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>string - The string name corresponding to the register ID, or an empty string.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BFModule.BufferAcquisition.clsCircularAcquisition.RegPeek">
+<span class="sig-name descname"><span class="pre">RegPeek</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="BFModule.BufferAcquisition.BufferedAcquisition.html#BFModule.BufferAcquisition.BufferedAcquisition" title="BFModule.BufferAcquisition.BufferedAcquisition"><span class="pre">BFModule.BufferAcquisition.BufferedAcquisition</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">RegId</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a></span></span><a class="headerlink" href="#BFModule.BufferAcquisition.clsCircularAcquisition.RegPeek" title="Permalink to this definition">#</a></dt>
+<dd><p>Peek (read) the value of the frame grabber register with ID RegId . Retrieve the ID of a named register using BFRegId.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>RegId</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – The ID of the frame grabber register to peek.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>int - The value peeked from the specified frame grabber register, RegId .
+Undefined, if RegId does not match an available register.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BFModule.BufferAcquisition.clsCircularAcquisition.RegPoke">
+<span class="sig-name descname"><span class="pre">RegPoke</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="BFModule.BufferAcquisition.BufferedAcquisition.html#BFModule.BufferAcquisition.BufferedAcquisition" title="BFModule.BufferAcquisition.BufferedAcquisition"><span class="pre">BFModule.BufferAcquisition.BufferedAcquisition</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">RegId</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">Value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#BFModule.BufferAcquisition.clsCircularAcquisition.RegPoke" title="Permalink to this definition">#</a></dt>
+<dd><p>Poke (write) Value to the frame grabber register with ID RegId . Retrieve the ID of a named register using BFRegId.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>RegId</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – The ID of the frame grabber register to poke.</p></li>
+<li><p><strong>Value</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – The value to be written to the frame grabber register specified by RegId .</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>int - Error code.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BFModule.BufferAcquisition.clsCircularAcquisition.SWTrigger">
+<span class="sig-name descname"><span class="pre">SWTrigger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="BFModule.BufferAcquisition.BufferedAcquisition.html#BFModule.BufferAcquisition.BufferedAcquisition" title="BFModule.BufferAcquisition.BufferedAcquisition"><span class="pre">BFModule.BufferAcquisition.BufferedAcquisition</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#BFModule.BufferAcquisition.clsCircularAcquisition.SWTrigger" title="Permalink to this definition">#</a></dt>
+<dd><p>Issues a software trigger to the board.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BFModule.BufferAcquisition.clsCircularAcquisition.SetExposureControl">
+<span class="sig-name descname"><span class="pre">SetExposureControl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="BFModule.BufferAcquisition.BufferedAcquisition.html#BFModule.BufferAcquisition.BufferedAcquisition" title="BFModule.BufferAcquisition.BufferedAcquisition"><span class="pre">BFModule.BufferAcquisition.BufferedAcquisition</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="BFModule.BufferAcquisition.ExposureControl.html#BFModule.BufferAcquisition.ExposureControl" title="BFModule.BufferAcquisition.ExposureControl"><span class="pre">ExposureControl</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#BFModule.BufferAcquisition.clsCircularAcquisition.SetExposureControl" title="Permalink to this definition">#</a></dt>
+<dd><p>Configure the New Timing Generator (NTG) or the Timing Sequencer (TS), which is used to create waveforms to control the line/frame rate and exposure time of cameras.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>exp</strong> (<a class="reference internal" href="BFModule.BufferAcquisition.ExposureControl.html#BFModule.BufferAcquisition.ExposureControl" title="BFModule.BufferAcquisition.ExposureControl"><em>ExposureControl</em></a>) – The <a class="reference internal" href="BFModule.BufferAcquisition.ExposureControl.html#BFModule.BufferAcquisition.ExposureControl" title="BFModule.BufferAcquisition.ExposureControl"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExposureControl</span></code></a> struct.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>void</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BFModule.BufferAcquisition.clsCircularAcquisition.SetTriggerMode">
+<span class="sig-name descname"><span class="pre">SetTriggerMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="BFModule.BufferAcquisition.BufferedAcquisition.html#BFModule.BufferAcquisition.BufferedAcquisition" title="BFModule.BufferAcquisition.BufferedAcquisition"><span class="pre">BFModule.BufferAcquisition.BufferedAcquisition</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">triggerMode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">triggerPolarity</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#BFModule.BufferAcquisition.clsCircularAcquisition.SetTriggerMode" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the trigger mode for the acquisition engine.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>triggerMode</strong> (<a class="reference internal" href="BFModule.BufferAcquisition.TriggerModes.html#BFModule.BufferAcquisition.TriggerModes" title="BFModule.BufferAcquisition.TriggerModes"><em>TriggerModes</em></a>) – The trigger mode to setup for acquisition.</p></li>
+<li><p><strong>triggerPolarity</strong> (<a class="reference internal" href="BFModule.BufferAcquisition.TriggerPolarity.html#BFModule.BufferAcquisition.TriggerPolarity" title="BFModule.BufferAcquisition.TriggerPolarity"><em>TriggerPolarity</em></a>) – Determines the polarity of the when the trigger should occur, on a rising or falling egde.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>void</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BFModule.BufferAcquisition.clsCircularAcquisition.WaitForFrame">
+<span class="sig-name descname"><span class="pre">WaitForFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#BFModule.BufferAcquisition.clsCircularAcquisition" title="BFModule.BufferAcquisition.clsCircularAcquisition"><span class="pre">BFModule.BufferAcquisition.clsCircularAcquisition</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="BFModule.BufferAcquisition.BufferInfo.html#BFModule.BufferAcquisition.BufferInfo" title="BFModule.BufferAcquisition.BufferInfo"><span class="pre">BFModule.BufferAcquisition.BufferInfo</span></a></span></span><a class="headerlink" href="#BFModule.BufferAcquisition.clsCircularAcquisition.WaitForFrame" title="Permalink to this definition">#</a></dt>
+<dd><p>Waits until there is a newly filled buffer. Returns when the buffer is filled, stopped,
+aborted, error occurs or when the clean up function is called.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Params int timeout<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Timeout value in milliseconds.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="BFModule.BufferAcquisition.BufferInfo.html#BFModule.BufferAcquisition.BufferInfo" title="BFModule.BufferAcquisition.BufferInfo">BufferInfo</a></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>BufferInfo object which contains information about the latest acquired buffer.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#RuntimeError" title="(in Python v3.11)"><strong>RuntimeError</strong></a> – Board not open.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#RuntimeError" title="(in Python v3.11)"><strong>RuntimeError</strong></a> – Buffers not allocated.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#RuntimeError" title="(in Python v3.11)"><strong>RuntimeError</strong></a> – Acquisition has not been setup.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#RuntimeError" title="(in Python v3.11)"><strong>RuntimeError</strong></a> – Circular acquisition has been stopped.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#RuntimeError" title="(in Python v3.11)"><strong>RuntimeError</strong></a> – Circular acquisition has been aborted.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#RuntimeError" title="(in Python v3.11)"><strong>RuntimeError</strong></a> – Wait for multiple objects timed out.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#RuntimeError" title="(in Python v3.11)"><strong>RuntimeError</strong></a> – Wait for multiple objects failed.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#RuntimeError" title="(in Python v3.11)"><strong>RuntimeError</strong></a> – The queue is empty.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BFModule.BufferAcquisition.clsCircularAcquisition.WriteBuffer">
+<span class="sig-name descname"><span class="pre">WriteBuffer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="BFModule.BufferAcquisition.BufferedAcquisition.html#BFModule.BufferAcquisition.BufferedAcquisition" title="BFModule.BufferAcquisition.BufferedAcquisition"><span class="pre">BFModule.BufferAcquisition.BufferedAcquisition</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">fileName</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">bufferNumber</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">writeBufferOptions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#BFModule.BufferAcquisition.clsCircularAcquisition.WriteBuffer" title="Permalink to this definition">#</a></dt>
+<dd><p>Writes one buffer to a file on disk in the BMP, TIFF or RAW file format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fileName</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – The file name to be saved to disk. The file name should be the full path along with the the file extension.</p></li>
+<li><p><strong>bufferNumber</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – The number of the buffer to be written to disk.</p></li>
+<li><p><strong>writeBufferOptions</strong> (<a class="reference internal" href="BFModule.BufferAcquisition.WriteOptions.html#BFModule.BufferAcquisition.WriteOptions" title="BFModule.BufferAcquisition.WriteOptions"><em>WriteOptions</em></a>) – The options for saving a buffer to disk. The WriteOptions may be OR’ed together.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>void</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#RuntimeError" title="(in Python v3.11)"><strong>RuntimeError</strong></a> – Board not open.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#RuntimeError" title="(in Python v3.11)"><strong>RuntimeError</strong></a> – Buffers not allocated.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#IndexError" title="(in Python v3.11)"><strong>IndexError</strong></a> – Buffer Number greater than the number of buffers allocated.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.11)"><strong>ValueError</strong></a> – Invalid argument.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BFModule.BufferAcquisition.clsCircularAcquisition.WriteBuffers">
+<span class="sig-name descname"><span class="pre">WriteBuffers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="BFModule.BufferAcquisition.BufferedAcquisition.html#BFModule.BufferAcquisition.BufferedAcquisition" title="BFModule.BufferAcquisition.BufferedAcquisition"><span class="pre">BFModule.BufferAcquisition.BufferedAcquisition</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">fileName</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">bufferNumber</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">StartNum</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">writeBufferOptions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#BFModule.BufferAcquisition.clsCircularAcquisition.WriteBuffers" title="Permalink to this definition">#</a></dt>
+<dd><p>Writes multiple buffers to a file on disk in the BMP, TIFF or RAW file format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fileName</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – The file name to be saved to disk. The file name should be the full path along with the the file extension.</p></li>
+<li><p><strong>bufferNumber</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – The number of the buffer to be written to disk.</p></li>
+<li><p><strong>StartNum</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – Specifies the first number to start the file names with. If StartNum = 5, the first file
+name will be “XXXX00000005.BMP”, but contain image data from buffer 0.</p></li>
+<li><p><strong>writeBufferOptions</strong> (<a class="reference internal" href="BFModule.BufferAcquisition.WriteOptions.html#BFModule.BufferAcquisition.WriteOptions" title="BFModule.BufferAcquisition.WriteOptions"><em>WriteOptions</em></a>) – The options for saving a buffer to disk. The WriteOptions may be OR’ed together.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>void</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#RuntimeError" title="(in Python v3.11)"><strong>RuntimeError</strong></a> – Board not open.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#RuntimeError" title="(in Python v3.11)"><strong>RuntimeError</strong></a> – Buffers not allocated.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#IndexError" title="(in Python v3.11)"><strong>IndexError</strong></a> – Buffer Number greater than the number of buffers allocated.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.11)"><strong>ValueError</strong></a> – Invalid argument.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BFModule.BufferAcquisition.clsCircularAcquisition.getProperties">
+<span class="sig-name descname"><span class="pre">getProperties</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="BFModule.BufferAcquisition.BufferedAcquisition.html#BFModule.BufferAcquisition.BufferedAcquisition" title="BFModule.BufferAcquisition.BufferedAcquisition"><span class="pre">BFModule.BufferAcquisition.BufferedAcquisition</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="BFModule.BufferAcquisition.BoardProperties.html#BFModule.BufferAcquisition.BoardProperties" title="BFModule.BufferAcquisition.BoardProperties"><span class="pre">BFModule.BufferAcquisition.BoardProperties</span></a></span></span><a class="headerlink" href="#BFModule.BufferAcquisition.clsCircularAcquisition.getProperties" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns a <cite>BoardProperties</cite> object which holds information about the opened framegrabber.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><cite>BoardProperties</cite>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="BFModule.BufferAcquisition.clsCircularAcquisition.isAqSetup">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">isAqSetup</span></span><a class="headerlink" href="#BFModule.BufferAcquisition.clsCircularAcquisition.isAqSetup" title="Permalink to this definition">#</a></dt>
+<dd><p>Check if Acquisition is setup.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)">bool</a></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>TRUE if the acquisition has been setup, FALSE otherwise</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="BFModule.BufferAcquisition.clsCircularAcquisition.isBoardOpen">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">isBoardOpen</span></span><a class="headerlink" href="#BFModule.BufferAcquisition.clsCircularAcquisition.isBoardOpen" title="Permalink to this definition">#</a></dt>
+<dd><p>Check if the board is open.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)">bool</a></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>TRUE if the board is open, FALSE otherwise</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="BFModule.BufferAcquisition.clsCircularAcquisition.isBufSetup">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">isBufSetup</span></span><a class="headerlink" href="#BFModule.BufferAcquisition.clsCircularAcquisition.isBufSetup" title="Permalink to this definition">#</a></dt>
+<dd><p>Check if the buffers are setup.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)">bool</a></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>TRUE if the buffers are setup, FALSE otherwise</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="BFModule.BufferAcquisition.clsCircularAcquisition.isGn2">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">isGn2</span></span><a class="headerlink" href="#BFModule.BufferAcquisition.clsCircularAcquisition.isGn2" title="Permalink to this definition">#</a></dt>
+<dd><p>Check if the board is a BitFlow Gen 2 board or not.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)">bool</a></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>TRUE if board is Gen 2, FALSE otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="BFModule.BufferAcquisition.WriteOptions.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">BFModule.BufferAcquisition.WriteOptions</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="BFModule.BufferAcquisition.clsSeqAcquisition.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">BFModule.BufferAcquisition.clsSeqAcquisition</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#BFModule.BufferAcquisition.clsCircularAcquisition"><code class="docutils literal notranslate"><span class="pre">clsCircularAcquisition</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#BFModule.BufferAcquisition.clsCircularAcquisition.__init__"><code class="docutils literal notranslate"><span class="pre">clsCircularAcquisition.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#BFModule.BufferAcquisition.clsCircularAcquisition.AqCleanup"><code class="docutils literal notranslate"><span class="pre">clsCircularAcquisition.AqCleanup()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#BFModule.BufferAcquisition.clsCircularAcquisition.AqControl"><code class="docutils literal notranslate"><span class="pre">clsCircularAcquisition.AqControl()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#BFModule.BufferAcquisition.clsCircularAcquisition.AqSetup"><code class="docutils literal notranslate"><span class="pre">clsCircularAcquisition.AqSetup()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#BFModule.BufferAcquisition.clsCircularAcquisition.BufferCleanup"><code class="docutils literal notranslate"><span class="pre">clsCircularAcquisition.BufferCleanup()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#BFModule.BufferAcquisition.clsCircularAcquisition.BufferSetup"><code class="docutils literal notranslate"><span class="pre">clsCircularAcquisition.BufferSetup()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#BFModule.BufferAcquisition.clsCircularAcquisition.CXPReadData"><code class="docutils literal notranslate"><span class="pre">clsCircularAcquisition.CXPReadData()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#BFModule.BufferAcquisition.clsCircularAcquisition.CXPReadReg"><code class="docutils literal notranslate"><span class="pre">clsCircularAcquisition.CXPReadReg()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#BFModule.BufferAcquisition.clsCircularAcquisition.CXPWriteData"><code class="docutils literal notranslate"><span class="pre">clsCircularAcquisition.CXPWriteData()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#BFModule.BufferAcquisition.clsCircularAcquisition.CXPWriteReg"><code class="docutils literal notranslate"><span class="pre">clsCircularAcquisition.CXPWriteReg()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#BFModule.BufferAcquisition.clsCircularAcquisition.Close"><code class="docutils literal notranslate"><span class="pre">clsCircularAcquisition.Close()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#BFModule.BufferAcquisition.clsCircularAcquisition.GetAcqStatus"><code class="docutils literal notranslate"><span class="pre">clsCircularAcquisition.GetAcqStatus()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#BFModule.BufferAcquisition.clsCircularAcquisition.GetBoardInfo"><code class="docutils literal notranslate"><span class="pre">clsCircularAcquisition.GetBoardInfo()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#BFModule.BufferAcquisition.clsCircularAcquisition.GetBoardNumber"><code class="docutils literal notranslate"><span class="pre">clsCircularAcquisition.GetBoardNumber()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#BFModule.BufferAcquisition.clsCircularAcquisition.GetCaptureStatus"><code class="docutils literal notranslate"><span class="pre">clsCircularAcquisition.GetCaptureStatus()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#BFModule.BufferAcquisition.clsCircularAcquisition.GetExposureControl"><code class="docutils literal notranslate"><span class="pre">clsCircularAcquisition.GetExposureControl()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#BFModule.BufferAcquisition.clsCircularAcquisition.GetTriggerMode"><code class="docutils literal notranslate"><span class="pre">clsCircularAcquisition.GetTriggerMode()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#BFModule.BufferAcquisition.clsCircularAcquisition.GetTriggerPolarity"><code class="docutils literal notranslate"><span class="pre">clsCircularAcquisition.GetTriggerPolarity()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#BFModule.BufferAcquisition.clsCircularAcquisition.Open"><code class="docutils literal notranslate"><span class="pre">clsCircularAcquisition.Open()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#BFModule.BufferAcquisition.clsCircularAcquisition.ReadImageFiles"><code class="docutils literal notranslate"><span class="pre">clsCircularAcquisition.ReadImageFiles()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#BFModule.BufferAcquisition.clsCircularAcquisition.RegFieldWidth"><code class="docutils literal notranslate"><span class="pre">clsCircularAcquisition.RegFieldWidth()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#BFModule.BufferAcquisition.clsCircularAcquisition.RegId"><code class="docutils literal notranslate"><span class="pre">clsCircularAcquisition.RegId()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#BFModule.BufferAcquisition.clsCircularAcquisition.RegName"><code class="docutils literal notranslate"><span class="pre">clsCircularAcquisition.RegName()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#BFModule.BufferAcquisition.clsCircularAcquisition.RegPeek"><code class="docutils literal notranslate"><span class="pre">clsCircularAcquisition.RegPeek()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#BFModule.BufferAcquisition.clsCircularAcquisition.RegPoke"><code class="docutils literal notranslate"><span class="pre">clsCircularAcquisition.RegPoke()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#BFModule.BufferAcquisition.clsCircularAcquisition.SWTrigger"><code class="docutils literal notranslate"><span class="pre">clsCircularAcquisition.SWTrigger()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#BFModule.BufferAcquisition.clsCircularAcquisition.SetExposureControl"><code class="docutils literal notranslate"><span class="pre">clsCircularAcquisition.SetExposureControl()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#BFModule.BufferAcquisition.clsCircularAcquisition.SetTriggerMode"><code class="docutils literal notranslate"><span class="pre">clsCircularAcquisition.SetTriggerMode()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#BFModule.BufferAcquisition.clsCircularAcquisition.WaitForFrame"><code class="docutils literal notranslate"><span class="pre">clsCircularAcquisition.WaitForFrame()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#BFModule.BufferAcquisition.clsCircularAcquisition.WriteBuffer"><code class="docutils literal notranslate"><span class="pre">clsCircularAcquisition.WriteBuffer()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#BFModule.BufferAcquisition.clsCircularAcquisition.WriteBuffers"><code class="docutils literal notranslate"><span class="pre">clsCircularAcquisition.WriteBuffers()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#BFModule.BufferAcquisition.clsCircularAcquisition.getProperties"><code class="docutils literal notranslate"><span class="pre">clsCircularAcquisition.getProperties()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#BFModule.BufferAcquisition.clsCircularAcquisition.isAqSetup"><code class="docutils literal notranslate"><span class="pre">clsCircularAcquisition.isAqSetup</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#BFModule.BufferAcquisition.clsCircularAcquisition.isBoardOpen"><code class="docutils literal notranslate"><span class="pre">clsCircularAcquisition.isBoardOpen</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#BFModule.BufferAcquisition.clsCircularAcquisition.isBufSetup"><code class="docutils literal notranslate"><span class="pre">clsCircularAcquisition.isBufSetup</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#BFModule.BufferAcquisition.clsCircularAcquisition.isGn2"><code class="docutils literal notranslate"><span class="pre">clsCircularAcquisition.isGn2</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../_sources/_generate/BFModule.BufferAcquisition.clsCircularAcquisition.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2021, Bitflow Inc.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
