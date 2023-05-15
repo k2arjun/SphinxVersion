@@ -2,11 +2,11 @@
     {
         "name": "Linux v2.0",
         "version": "lin2.0",
-        "url": "https://github.com/k2arjun/SphinxVersion/blob/main/switcher.json -H \"Authorization: Token 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\""
+        "url": "https://raw.githubusercontent.com/k2arjun/SphinxVersion/main/Linux_html/index.html"
     },
     {
         "name": "Windows v2.0",
         "version": "win2.0",
-        "url": "https://raw.githubusercontent.com/k2arjun/SphinxVersion/main/Win_html/index.html?token=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"
+        "url": "https://raw.githubusercontent.com/k2arjun/SphinxVersion/main/Win_html/index.html"
     }
 ]
