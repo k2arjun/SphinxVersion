@@ -2,11 +2,11 @@
     {
         "name": "Linux v2.0",
         "version": "lin2.0",
-        "url": "file://home/arjun/Development/combined_docs/docs/_build/html/"
+        "url": "file:///home/arjun/Development/combined_docs/docs/_build/html/"
     },
     {
         "name": "Windows v2.0",
         "version": "win2.0",
-        "url": "file://home/arjun/Development/combined_docs/docs/_build/html/"
+        "url": "file:///home/arjun/Development/combined_docs/docs/_build/html/"
     }
 ]
