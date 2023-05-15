@@ -2,7 +2,7 @@
     {
         "name": "Linux v2.0",
         "version": "lin2.0",
-        "url": "https://raw.githubusercontent.com/k2arjun/SphinxVersion/main/Linux_html/"
+        "url": "file://home/arjun/Development/combined_docs/docs/_build/html"
     },
     {
         "name": "Windows v2.0",
